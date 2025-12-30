@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Skills Analysis | Matrix</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&amp;family=Rajdhani:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "neo-bg": "#050508",
+                        "neo-card": "#0e0f16",
+                        "neo-border": "#2d1b3e",
+                        "neo-primary": "#d946ef",
+                        "neo-secondary": "#a855f7",
+                        "neo-accent": "#06b6d4",
+                        "neo-highlight": "#f472b6",
+                        "neo-text": "#e0e6ed",
+                        "neo-muted": "#8a8ea0",
+                    },
+                    fontFamily: {
+                        "display": ["Orbitron", "sans-serif"],
+                        "sans": ["Rajdhani", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #2d1b3e 1px, transparent 1px), linear-gradient(to bottom, #2d1b3e 1px, transparent 1px)",
+                    },
+                    boxShadow: {
+                        "glow-primary": "0 0 20px -5px rgba(217, 70, 239, 0.5)",
+                        "glow-secondary": "0 0 20px -5px rgba(168, 85, 247, 0.5)",
+                        "glow-accent": "0 0 20px -5px rgba(6, 182, 212, 0.5)",
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #050508;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #2d1b3e;
+            border-radius: 2px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d946ef;
+        }
+
+        .glass-panel {
+            background: rgba(14, 15, 22, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .neon-text-primary {
+            text-shadow: 0 0 10px rgba(217, 70, 239, 0.6);
+        }
+
+        .conic-progress-1 {
+            background: conic-gradient(#d946ef 92%, #1f2937 0);
+            box-shadow: 0 0 15px rgba(217, 70, 239, 0.3);
+        }
+
+        .conic-progress-2 {
+            background: conic-gradient(#a855f7 85%, #1f2937 0);
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+        }
+
+        .conic-progress-3 {
+            background: conic-gradient(#06b6d4 78%, #1f2937 0);
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
+        }
+
+        @keyframes scan {
+            0% {
+                transform: translateY(-100%);
+            }
+
+            100% {
+                transform: translateY(1000%);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-neo-bg text-neo-text font-sans antialiased selection:bg-neo-primary selection:text-white">
+    <div
+        class="relative flex min-h-screen w-full flex-col max-w-screen-xl mx-auto shadow-2xl bg-neo-bg md:border-x border-neo-border pb-24 overflow-hidden">
+        <div class="fixed inset-0 pointer-events-none z-0 bg-grid-pattern opacity-[0.05]"></div>
+
+        <!-- Desktop Nav -->
+        <nav
+            class="hidden md:flex sticky top-0 z-[60] h-20 bg-neo-bg/80 backdrop-blur-2xl border-b border-neo-border/50 px-8 items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div
+                    class="size-10 rounded-lg bg-neo-primary/20 border border-neo-primary/30 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-neo-primary">terminal</span>
+                </div>
+                <span class="font-display font-bold tracking-widest text-white uppercase text-sm">System.<span
+                        class="text-neo-primary">Matrix</span></span>
+            </div>
+            <div class="flex items-center gap-8">
+                <a href="profile_summary.html"
+                    class="text-neo-muted hover:text-white transition-colors font-display text-xs font-bold uppercase tracking-widest">About</a>
+                <a href="projects.html"
+                    class="text-neo-muted hover:text-white transition-colors font-display text-xs font-bold uppercase tracking-widest">Work</a>
+                <a href="experience.html"
+                    class="text-neo-muted hover:text-white transition-colors font-display text-xs font-bold uppercase tracking-widest">Exp</a>
+                <a href="education.html"
+                    class="text-neo-muted hover:text-white transition-colors font-display text-xs font-bold uppercase tracking-widest">CV</a>
+                <a href="contact.html"
+                    class="text-neo-muted hover:text-white transition-colors font-display text-xs font-bold uppercase tracking-widest">Contact</a>
+            </div>
+        </nav>
+
+        <!-- Mobile Header -->
+        <div
+            class="md:hidden sticky top-0 z-50 flex items-center glass-panel px-6 py-4 justify-between border-b border-neo-border/20">
+            <a href="profile_summary.html"
+                class="text-neo-primary flex size-8 items-center justify-center rounded-md hover:bg-neo-primary/10 transition-colors border border-transparent hover:border-neo-primary/30 group">
+                <span
+                    class="material-symbols-outlined text-[20px] group-hover:-translate-x-0.5 transition-transform">arrow_back_ios_new</span>
+            </a>
+            <h2 class="text-neo-text/60 text-[10px] font-display font-bold uppercase tracking-[0.25em]">System<span
+                    class="text-neo-primary">.Log</span></h2>
+            <div class="size-8"></div>
+        </div>
+
+        <!-- Main Content Wrapper -->
+        <div class="relative z-10 p-6 md:p-12">
+
+            <!-- Hero Section -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
+                <div class="max-w-2xl">
+                    <p class="text-neo-primary text-xs font-mono tracking-[0.4em] mb-3">:: ACCESS_GRANTED //
+                        CORE_SKILLS_V2.0</p>
+                    <h1
+                        class="font-display text-white text-5xl md:text-7xl font-bold leading-none uppercase tracking-tighter italic">
+                        Skills <br />
+                        <span class="text-neo-primary neon-text-primary">Matrix</span>
+                    </h1>
+                    <p
+                        class="text-neo-muted text-sm md:text-base leading-relaxed font-mono mt-6 border-l-2 border-neo-primary/40 pl-6 bg-gradient-to-r from-neo-primary/5 to-transparent py-4">
+                        INITIALIZING ANALYTICAL OVERVIEW OF ENGINEERING COMPETENCIES. CURRENT MODEL SHOWS OPTIMIZED
+                        PERFORMANCE IN AI AGENTIC ARCHITECTURES AND NEURAL SYSTEMS.
+                    </p>
+                </div>
+                <div class="relative hidden lg:block">
+                    <div class="absolute inset-0 bg-neo-primary blur-3xl opacity-10"></div>
+                    <span
+                        class="material-symbols-outlined text-neo-primary text-[120px] relative z-10 animate-pulse-slow">hub</span>
+                </div>
+            </div>
+
+            <!-- Dashboard Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+
+                <!-- Primary Capability Card -->
+                <div
+                    class="lg:col-span-2 bg-neo-card rounded-2xl p-[1px] bg-gradient-to-br from-neo-primary via-neo-secondary/50 to-transparent shadow-glow-primary">
+                    <div class="bg-neo-bg rounded-[15px] p-8 relative overflow-hidden h-full group">
+                        <div
+                            class="absolute top-0 left-0 w-full h-[2px] bg-neo-primary/50 shadow-[0_0_15px_#d946ef] animate-[scan_3s_linear_infinite] opacity-30 pointer-events-none">
+                        </div>
+
+                        <div class="flex justify-between items-start mb-10 border-b border-neo-border/50 pb-6">
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.3em] text-neo-secondary font-mono mb-2">
+                                    Target Designation</p>
+                                <p class="font-display text-3xl text-white tracking-widest italic font-black uppercase">
+                                    FULL STACK AI</p>
+                            </div>
+                            <div class="text-right">
+                                <span
+                                    class="inline-flex items-center px-4 py-2 rounded-lg bg-neo-primary/10 text-neo-primary border border-neo-primary/30 shadow-[0_0_20px_rgba(217,70,239,0.2)]">
+                                    <span class="w-2 h-2 rounded-full bg-neo-primary mr-3 animate-pulse"></span>
+                                    <span class="text-[10px] uppercase font-mono tracking-widest font-bold">LVL: AGENT
+                                        ARCHITECT</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+                            <!-- Skill Progress Items -->
+                            <div class="space-y-4">
+                                <div
+                                    class="flex justify-between font-mono text-[10px] uppercase tracking-widest text-neo-muted mb-2">
+                                    <span>Model Architecture</span>
+                                    <span class="text-neo-primary">95%</span>
+                                </div>
+                                <div
+                                    class="h-3 w-full bg-neo-card rounded-full border border-neo-border overflow-hidden p-[1px]">
+                                    <div class="h-full bg-gradient-to-r from-neo-secondary to-neo-primary rounded-full shadow-[0_0_15px_rgba(217,70,239,0.5)]"
+                                        style="width: 95%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div
+                                    class="flex justify-between font-mono text-[10px] uppercase tracking-widest text-neo-muted mb-2">
+                                    <span>Neural Engineering</span>
+                                    <span class="text-neo-highlight">85%</span>
+                                </div>
+                                <div
+                                    class="h-3 w-full bg-neo-card rounded-full border border-neo-border overflow-hidden p-[1px]">
+                                    <div class="h-full bg-gradient-to-r from-neo-secondary to-neo-highlight rounded-full shadow-[0_0_15px_rgba(244,114,182,0.5)]"
+                                        style="width: 85%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div
+                                    class="flex justify-between font-mono text-[10px] uppercase tracking-widest text-neo-muted mb-2">
+                                    <span>Agentic Integration</span>
+                                    <span class="text-neo-accent">90%</span>
+                                </div>
+                                <div
+                                    class="h-3 w-full bg-neo-card rounded-full border border-neo-border overflow-hidden p-[1px]">
+                                    <div class="h-full bg-gradient-to-r from-neo-secondary to-neo-accent rounded-full shadow-[0_0_15px_rgba(6,182,212,0.5)]"
+                                        style="width: 90%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div
+                                    class="flex justify-between font-mono text-[10px] uppercase tracking-widest text-neo-muted mb-2">
+                                    <span>Cloud Deployment</span>
+                                    <span class="text-neo-secondary">75%</span>
+                                </div>
+                                <div
+                                    class="h-3 w-full bg-neo-card rounded-full border border-neo-border overflow-hidden p-[1px]">
+                                    <div class="h-full bg-gradient-to-r from-neo-primary to-neo-secondary rounded-full shadow-[0_0_15px_rgba(168,85,247,0.5)]"
+                                        style="width: 75%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Heuristic Analysis Column -->
+                <div
+                    class="bg-neo-card/40 rounded-2xl border border-neo-border p-8 backdrop-blur-md relative overflow-hidden">
+                    <div class="absolute inset-0 bg-grid-pattern opacity-[0.1]"></div>
+                    <h3
+                        class="font-display text-white text-sm font-bold mb-8 uppercase tracking-[0.3em] flex items-center gap-3">
+                        <span class="w-1.5 h-1.5 bg-white rotate-45"></span>
+                        HEURISTIC_ANALYSIS
+                    </h3>
+
+                    <div class="flex flex-col gap-10">
+                        <div class="flex items-center gap-6">
+                            <div
+                                class="relative size-20 rounded-full conic-progress-1 flex items-center justify-center p-[2px] shrink-0">
+                                <div
+                                    class="size-full rounded-full bg-neo-bg flex items-center justify-center z-10 border border-neo-border">
+                                    <span class="text-xs font-bold text-neo-primary font-mono">92%</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-white uppercase tracking-widest font-display mb-1">
+                                    Problem Solving</p>
+                                <p class="text-[10px] text-neo-muted font-mono leading-tight">Advanced algorithmic
+                                    resolution capabilities across complex systems.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-6">
+                            <div
+                                class="relative size-20 rounded-full conic-progress-2 flex items-center justify-center p-[2px] shrink-0">
+                                <div
+                                    class="size-full rounded-full bg-neo-bg flex items-center justify-center z-10 border border-neo-border">
+                                    <span class="text-xs font-bold text-neo-secondary font-mono">85%</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-white uppercase tracking-widest font-display mb-1">
+                                    Research Method</p>
+                                <p class="text-[10px] text-neo-muted font-mono leading-tight">Systematic inquiry and
+                                    documentation of neural network behavior.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-6">
+                            <div
+                                class="relative size-20 rounded-full conic-progress-3 flex items-center justify-center p-[2px] shrink-0">
+                                <div
+                                    class="size-full rounded-full bg-neo-bg flex items-center justify-center z-10 border border-neo-border">
+                                    <span class="text-xs font-bold text-neo-accent font-mono">78%</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-white uppercase tracking-widest font-display mb-1">
+                                    Agile Workflow</p>
+                                <p class="text-[10px] text-neo-muted font-mono leading-tight">High-velocity iteration
+                                    cycles in fast-paced dev environments.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+                <!-- Programming Languages -->
+                <div>
+                    <h3 class="font-display text-white text-xl font-bold mb-8 flex items-center gap-4">
+                        <span class="w-1.5 h-1.5 bg-neo-primary rotate-45"></span>
+                        SYNTAX.<span class="text-neo-primary">LOGIC</span>
+                        <span class="flex-1 h-[1px] bg-gradient-to-r from-neo-border to-transparent ml-2"></span>
+                    </h3>
+                    <div class="space-y-8">
+                        <div class="group">
+                            <div class="flex justify-between items-end mb-3">
+                                <div class="flex items-center gap-4">
+                                    <span class="material-symbols-outlined text-neo-primary">terminal</span>
+                                    <span
+                                        class="text-base font-bold text-white tracking-widest uppercase font-display">Python</span>
+                                </div>
+                                <span class="text-xs font-mono text-neo-primary font-bold">CORE // 95%</span>
+                            </div>
+                            <div
+                                class="h-2 w-full bg-neo-card border border-neo-border rounded-full overflow-hidden relative">
+                                <div
+                                    class="h-full bg-gradient-to-r from-neo-secondary to-neo-primary w-[95%] shadow-[0_0_20px_rgba(217,70,239,0.5)]">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="group">
+                            <div class="flex justify-between items-end mb-3">
+                                <div class="flex items-center gap-4">
+                                    <span class="material-symbols-outlined text-neo-secondary">data_object</span>
+                                    <span
+                                        class="text-base font-bold text-white tracking-widest uppercase font-display">C++</span>
+                                </div>
+                                <span class="text-xs font-mono text-neo-secondary font-bold">PERF // 65%</span>
+                            </div>
+                            <div
+                                class="h-2 w-full bg-neo-card border border-neo-border rounded-full overflow-hidden relative">
+                                <div
+                                    class="h-full bg-gradient-to-r from-neo-primary to-neo-secondary w-[65%] shadow-[0_0_20px_rgba(168,85,247,0.5)]">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="group">
+                            <div class="flex justify-between items-end mb-3">
+                                <div class="flex items-center gap-4">
+                                    <span class="material-symbols-outlined text-neo-accent">psychology</span>
+                                    <span
+                                        class="text-base font-bold text-white tracking-widest uppercase font-display">Prompt
+                                        Eng</span>
+                                </div>
+                                <span class="text-xs font-mono text-neo-accent font-bold">LLM // 92%</span>
+                            </div>
+                            <div
+                                class="h-2 w-full bg-neo-card border border-neo-border rounded-full overflow-hidden relative">
+                                <div
+                                    class="h-full bg-gradient-to-r from-neo-secondary to-neo-accent w-[92%] shadow-[0_0_20px_rgba(6,182,212,0.5)]">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Neural Frameworks -->
+                <div>
+                    <h3 class="font-display text-white text-xl font-bold mb-8 flex items-center gap-4">
+                        <span class="w-1.5 h-1.5 bg-neo-secondary rotate-45"></span>
+                        NEURAL.<span class="text-neo-secondary">NETWORKS</span>
+                        <span class="flex-1 h-[1px] bg-gradient-to-r from-neo-border to-transparent ml-2"></span>
+                    </h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div
+                            class="bg-neo-card p-6 rounded-2xl border border-neo-border hover:border-neo-primary/50 transition-all duration-300 group">
+                            <span class="material-symbols-outlined text-neo-primary text-3xl mb-4 block">hub</span>
+                            <p class="text-base font-bold text-white font-display mb-1 uppercase tracking-wider">PyTorch
+                            </p>
+                            <p class="text-[10px] text-neo-muted font-mono uppercase">Research & Proto</p>
+                        </div>
+                        <div
+                            class="bg-neo-card p-6 rounded-2xl border border-neo-border hover:border-neo-secondary/50 transition-all duration-300 group">
+                            <span
+                                class="material-symbols-outlined text-neo-secondary text-3xl mb-4 block">deployed_code</span>
+                            <p class="text-base font-bold text-white font-display mb-1 uppercase tracking-wider">
+                                TensorFlow</p>
+                            <p class="text-[10px] text-neo-muted font-mono uppercase">Prod Serving</p>
+                        </div>
+                        <div
+                            class="bg-neo-card p-6 rounded-2xl border border-neo-border hover:border-neo-accent/50 transition-all duration-300 group">
+                            <span class="material-symbols-outlined text-neo-accent text-3xl mb-4 block">functions</span>
+                            <p class="text-base font-bold text-white font-display mb-1 uppercase tracking-wider">
+                                Scikit-learn</p>
+                            <p class="text-[10px] text-neo-muted font-mono uppercase">Classic Algos</p>
+                        </div>
+                        <div
+                            class="bg-neo-card p-6 rounded-2xl border border-neo-border hover:border-neo-highlight/50 transition-all duration-300 group">
+                            <span
+                                class="material-symbols-outlined text-neo-highlight text-3xl mb-4 block">account_tree</span>
+                            <p class="text-base font-bold text-white font-display mb-1 uppercase tracking-wider">
+                                LangGraph / CrewAI</p>
+                            <p class="text-[10px] text-neo-muted font-mono uppercase">Multi-Agent Systems</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Toolkit Section -->
+            <div class="mt-20">
+                <h3 class="font-display text-white text-xl font-bold mb-8 flex items-center gap-4">
+                    <span class="w-1.5 h-1.5 bg-neo-accent rotate-45"></span>
+                    TOOLKIT.<span class="text-neo-accent">REGISTRY</span>
+                    <span class="flex-1 h-[1px] bg-gradient-to-r from-neo-border to-transparent ml-2"></span>
+                </h3>
+                <div class="flex flex-wrap gap-4">
+                    <span
+                        class="px-6 py-3 rounded-xl bg-neo-card border border-neo-border text-sm font-mono text-neo-muted flex items-center gap-3 hover:border-white hover:text-white transition-all cursor-default backdrop-blur-md">
+                        <span class="material-symbols-outlined text-base">point_scan</span> Cursor AI
+                    </span>
+                    <span
+                        class="px-6 py-3 rounded-xl bg-neo-card border border-neo-border text-sm font-mono text-neo-muted flex items-center gap-3 hover:border-white hover:text-white transition-all cursor-default backdrop-blur-md">
+                        <span class="material-symbols-outlined text-base">code</span> GitHub Copilot
+                    </span>
+                    <span
+                        class="px-6 py-3 rounded-xl bg-neo-card border border-neo-border text-sm font-mono text-neo-muted flex items-center gap-3 hover:border-white hover:text-white transition-all cursor-default backdrop-blur-md">
+                        <span class="material-symbols-outlined text-base">api</span> FastAPI
+                    </span>
+                    <span
+                        class="px-6 py-3 rounded-xl bg-neo-card border border-neo-border text-sm font-mono text-neo-muted flex items-center gap-3 hover:border-white hover:text-white transition-all cursor-default backdrop-blur-md">
+                        <span class="material-symbols-outlined text-base">layers</span> Docker
+                    </span>
+                    <span
+                        class="px-6 py-3 rounded-xl bg-neo-card border border-neo-border text-sm font-mono text-neo-muted flex items-center gap-3 hover:border-white hover:text-white transition-all cursor-default backdrop-blur-md">
+                        <span class="material-symbols-outlined text-base">box</span> Kubernetes
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Download Actions (Desktop Floating / Mobile Bottom) -->
+        <div class="fixed bottom-12 right-12 z-[70] hidden md:block">
+            <button
+                class="bg-white text-black font-display font-bold py-5 px-10 rounded-2xl shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:shadow-[0_0_50px_rgba(217,70,239,0.6)] hover:bg-neo-primary hover:text-white transition-all transform active:scale-[0.95] flex items-center gap-4 group">
+                <span class="material-symbols-outlined text-2xl group-hover:animate-bounce">download</span>
+                <span class="tracking-[0.3em] text-xs uppercase">Extract_Full_Dataset</span>
+            </button>
+        </div>
+
+        <!-- Mobile Bottom Nav -->
+        <nav
+            class="md:hidden fixed bottom-0 z-40 w-full bg-neo-bg/95 backdrop-blur-xl border-t border-neo-border/50 pb-safe shadow-[0_-10px_30px_rgba(0,0,0,0.8)]">
+            <div class="flex justify-around items-center h-20 px-4">
+                <a href="projects.html" class="flex flex-col items-center justify-center gap-1 w-14">
+                    <span class="material-symbols-outlined text-neo-muted text-[24px]">grid_view</span>
+                    <span class="text-[8px] font-bold uppercase tracking-widest text-neo-muted font-display">Work</span>
+                </a>
+                <a href="experience.html" class="flex flex-col items-center justify-center gap-1 w-14">
+                    <span class="material-symbols-outlined text-neo-muted text-[24px]">work</span>
+                    <span class="text-[8px] font-bold uppercase tracking-widest text-neo-muted font-display">Exp</span>
+                </a>
+                <a href="profile_summary.html" class="flex flex-col items-center justify-center gap-1 w-14">
+                    <div
+                        class="relative bg-neo-primary/20 text-neo-primary rounded-xl p-1.5 shadow-glow-primary border border-neo-primary/30">
+                        <span class="material-symbols-outlined text-[24px]">person</span>
+                    </div>
+                    <span
+                        class="text-[8px] font-bold uppercase tracking-widest text-neo-primary font-display">Matrix</span>
+                </a>
+                <a href="education.html" class="flex flex-col items-center justify-center gap-1 w-14">
+                    <span class="material-symbols-outlined text-neo-muted text-[24px]">school</span>
+                    <span class="text-[8px] font-bold uppercase tracking-widest text-neo-muted font-display">CV</span>
+                </a>
+                <a href="contact.html" class="flex flex-col items-center justify-center gap-1 w-14">
+                    <span class="material-symbols-outlined text-neo-muted text-[24px]">mail</span>
+                    <span class="text-[8px] font-bold uppercase tracking-widest text-neo-muted font-display">Mail</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Experience &amp; Awards</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "neo-bg": "#05050a",
+                        "neo-surface": "#0f0f16",
+                        "neon-cyan": "#00f3ff",
+                        "neon-pink": "#ff00ff",
+                        "neon-purple": "#b94dff",
+                        "neon-green": "#00ff9d",
+                        "text-main": "#e2e8f0",
+                        "text-muted": "#94a3b8",
+                    },
+                    fontFamily: {
+                        "sans": ["Space Grotesk", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    boxShadow: {
+                        "neon-cyan": "0 0 5px rgba(0, 243, 255, 0.2), 0 0 15px rgba(0, 243, 255, 0.1)",
+                        "neon-pink": "0 0 5px rgba(255, 0, 255, 0.3), 0 0 15px rgba(255, 0, 255, 0.15)",
+                        "neon-purple": "0 0 5px rgba(185, 77, 255, 0.3), 0 0 15px rgba(185, 77, 255, 0.15)",
+                        "glow": "0 0 20px rgba(255, 0, 255, 0.15)",
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        body {
+            background-color: #05050a;
+        }
+
+        .cyber-grid {
+            background-size: 40px 40px;
+            background-image:
+                linear-gradient(to right, rgba(255, 0, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 0, 255, 0.05) 1px, transparent 1px);
+            mask-image: linear-gradient(to bottom, black 20%, transparent 90%);
+            -webkit-mask-image: linear-gradient(to bottom, black 20%, transparent 90%);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="antialiased bg-neo-bg text-text-main font-sans selection:bg-neon-pink selection:text-neo-bg">
+    <div class="fixed inset-0 cyber-grid pointer-events-none z-0"></div>
+    <div
+        class="relative flex min-h-screen w-full flex-col max-w-screen-xl mx-auto md:border-x border-white/5 bg-neo-bg shadow-2xl pb-24 z-10">
+        <!-- Desktop Nav -->
+        <nav
+            class="hidden md:flex sticky top-0 z-[60] h-20 bg-neo-surface/80 backdrop-blur-2xl border-b border-neon-pink/20 px-8 items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div
+                    class="size-10 rounded-lg bg-neon-pink/20 border border-neon-pink/30 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-neon-pink">terminal</span>
+                </div>
+                <span class="font-sans font-bold tracking-widest text-white uppercase text-sm">System.<span
+                        class="text-neon-pink">Experience</span></span>
+            </div>
+            <div class="flex items-center gap-8">
+                <a href="profile_summary.html"
+                    class="text-text-muted hover:text-white transition-colors font-sans text-xs font-bold uppercase tracking-widest">About</a>
+                <a href="projects.html"
+                    class="text-text-muted hover:text-white transition-colors font-sans text-xs font-bold uppercase tracking-widest">Work</a>
+                <a href="experience.html"
+                    class="text-neon-pink font-sans text-xs font-bold uppercase tracking-widest border-b-2 border-neon-pink pb-1">Exp</a>
+                <a href="education.html"
+                    class="text-text-muted hover:text-white transition-colors font-sans text-xs font-bold uppercase tracking-widest">CV</a>
+                <a href="contact.html"
+                    class="text-text-muted hover:text-white transition-colors font-sans text-xs font-bold uppercase tracking-widest">Contact</a>
+            </div>
+        </nav>
+        <div
+            class="md:hidden sticky top-0 z-50 w-full flex flex-col bg-neo-bg/80 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-black/20">
+            <div class="flex items-center px-4 py-4 justify-between">
+                <a href="profile_summary.html"
+                    class="text-white flex size-10 shrink-0 items-center justify-center rounded-full border border-white/10 hover:border-neon-pink hover:shadow-neon-pink hover:text-neon-pink transition-all duration-300 cursor-pointer group bg-neo-surface">
+                    <span
+                        class="material-symbols-outlined text-xl group-hover:scale-110 transition-transform">arrow_back</span>
+                </a>
+                <div class="flex flex-col items-center">
+                    <h2
+                        class="text-white text-lg font-bold tracking-[0.2em] uppercase drop-shadow-[0_0_5px_rgba(255,255,255,0.3)]">
+                        Profile</h2>
+                    <div class="h-0.5 w-12 bg-gradient-to-r from-transparent via-neon-pink to-transparent mt-1"></div>
+                </div>
+                <div class="flex size-10 items-center justify-center">
+                    <div class="size-9 rounded-full bg-cover bg-center border border-white/10 hover:border-neon-purple transition-colors"
+                        style='background-image: url("C:/Users/21625/.gemini/antigravity/brain/0c674e6b-902c-414b-b0dd-b1f2452cdf44/uploaded_image_1767054759862.jpg");'>
+                    </div>
+                </div>
+            </div>
+            <div class="flex gap-3 px-4 pb-4 overflow-x-auto no-scrollbar">
+                <button
+                    class="flex h-8 shrink-0 items-center justify-center rounded bg-neon-pink/10 border border-neon-pink px-5 transition-all shadow-neon-pink">
+                    <p class="text-neon-pink text-xs font-bold uppercase tracking-wider font-mono">All_</p>
+                </button>
+                <button
+                    class="flex h-8 shrink-0 items-center justify-center rounded bg-neo-surface/50 hover:bg-white/5 border border-white/10 hover:border-white/30 px-5 transition-all">
+                    <p class="text-gray-400 text-xs font-medium uppercase tracking-wider font-mono">Exp</p>
+                </button>
+                <button
+                    class="flex h-8 shrink-0 items-center justify-center rounded bg-neo-surface/50 hover:bg-white/5 border border-white/10 hover:border-white/30 px-5 transition-all">
+                    <p class="text-gray-400 text-xs font-medium uppercase tracking-wider font-mono">Awards</p>
+                </button>
+                <button
+                    class="flex h-8 shrink-0 items-center justify-center rounded bg-neo-surface/50 hover:bg-white/5 border border-white/10 hover:border-white/30 px-5 transition-all">
+                    <p class="text-gray-400 text-xs font-medium uppercase tracking-wider font-mono">Rsch</p>
+                </button>
+            </div>
+        </div>
+
+        <div class="hidden md:block px-8 pt-12 pb-6">
+            <h1 class="text-white text-6xl font-sans font-black tracking-tighter uppercase italic mb-4">
+                Experience.<span class="text-neon-pink drop-shadow-neon-pink">Archive</span>
+            </h1>
+            <p
+                class="text-text-muted font-mono text-sm tracking-[0.3em] uppercase opacity-70 border-l-2 border-neon-pink pl-4">
+                :: SYSTEM_BOOT_SEQUENCE: SUCCESSFUL // ACCESSING_HISTORY</p>
+        </div>
+        <div class="flex flex-col gap-8 p-5 md:px-8 w-full mt-2">
+            <div
+                class="relative w-full md:min-h-[400px] overflow-hidden rounded-xl group border border-white/10 shadow-2xl shadow-black/50">
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                    data-alt="Abstract dark blue artificial intelligence neural network background"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDBIkD0nJ25dqD_PjYp53h7Pu1g8rEM0gkseURSyh4DmA28LvchLclu_D4wPg5zNDB6Bh69II5N8z9mTX_iGNbFFyrH11vERAsU_LcyrAZ4CYKwUw54-PJ8nfs9bL6tt1e6nmJS6lP35Tgb8cyTZ_k0gUBf4sfpHKTe5XV2eEXwQCBBVhCvRKYuUGj76ZHcJdI_pxpXaxA9U7pVsTfDIr3mQIFMDV6gzNdYz_diUo2ch1oqQAdsSm4Dr7QQxEmnK2HCP9NgX6aTzlg");'>
+                </div>
+                <div class="absolute inset-0 bg-neo-bg/60 backdrop-blur-[2px]"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-neo-bg via-neo-bg/80 to-transparent"></div>
+                <div
+                    class="relative flex flex-col items-start justify-end p-8 md:p-12 h-full min-h-[300px] md:min-h-[400px]">
+                    <div
+                        class="mb-4 flex items-center gap-2 rounded bg-black/40 backdrop-blur-md px-4 py-1.5 border border-neon-cyan/50 shadow-[0_0_15px_rgba(0,243,255,0.3)]">
+                        <div class="size-2 rounded-full bg-neon-cyan shadow-[0_0_10px_#00f3ff] animate-pulse"></div>
+                        <p class="text-neon-cyan text-xs font-bold uppercase tracking-[0.2em] font-mono">Recent Role</p>
+                    </div>
+                    <h3 class="text-white text-4xl md:text-5xl font-bold leading-tight mb-2 tracking-tight">AI Agent
+                        <span class="text-neon-cyan drop-shadow-neon-cyan">Intern</span>
+                    </h3>
+                    <p
+                        class="text-text-muted text-base md:text-lg font-mono tracking-wide mb-6 flex items-center gap-3">
+                        <span class="text-neon-cyan">@Omnilik</span>
+                        <span class="size-1.5 bg-gray-600 rounded-full"></span>
+                        <span>JULY 2025 - SEPT 2025</span>
+                    </p>
+                    <div class="flex flex-wrap gap-3 w-full">
+                        <div
+                            class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-neon-cyan font-mono hover:bg-neon-cyan/10 hover:border-neon-cyan/50 transition-all cursor-default shadow-lg">
+                            AI Agents</div>
+                        <div
+                            class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-neon-cyan font-mono hover:bg-neon-cyan/10 hover:border-neon-cyan/50 transition-all cursor-default shadow-lg">
+                            LLMs</div>
+                        <div
+                            class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-neon-cyan font-mono hover:bg-neon-cyan/10 hover:border-neon-cyan/50 transition-all cursor-default shadow-lg">
+                            Automation</div>
+                    </div>
+                </div>
+                <div class="absolute top-0 right-0 p-6">
+                    <div class="w-24 h-24 border-t-2 border-r-2 border-neon-pink/40 rounded-tr-2xl"></div>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 mt-6">
+                <div class="flex flex-col">
+                    <h3 class="text-white text-2xl font-bold tracking-wider uppercase">Log_Entries</h3>
+                    <div class="h-1 w-full bg-neon-pink shadow-[0_0_15px_#ff00ff]"></div>
+                </div>
+                <div class="h-px flex-1 bg-gradient-to-r from-white/10 to-transparent"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative mt-8 px-6 md:px-0">
+                <div
+                    class="group flex flex-col rounded-lg p-6 bg-neo-surface/80 border border-white/5 hover:border-neon-pink/40 hover:shadow-neon-pink transition-all duration-300 relative overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 -mr-10 -mt-10 size-24 bg-neon-pink/10 blur-2xl rounded-full group-hover:bg-neon-pink/20 transition-all">
+                    </div>
+                    <div class="flex justify-between items-start mb-2 relative z-10">
+                        <div class="flex flex-col">
+                            <span
+                                class="text-neon-pink text-[10px] font-bold uppercase tracking-wider mb-1 flex items-center gap-1 font-mono">
+                                <span class="material-symbols-outlined text-sm">emoji_events</span> Achievement
+                            </span>
+                            <h4 class="text-white text-lg font-bold">Qubic AI Hackathon</h4>
+                        </div>
+                        <span
+                            class="text-gray-500 text-xs font-mono mt-1 border border-white/10 px-2 py-0.5 rounded bg-black/20">2025</span>
+                    </div>
+                    <p class="text-neon-pink/80 text-xs font-mono mb-3">Top 5 teams @ Nostromo Launchpad Trench</p>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4 font-light">
+                        Top-5 finish developing innovative AI solutions using GraphChain on the Qubic network for task
+                        optimization.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] text-gray-400 font-mono bg-white/5 px-2 py-1 rounded">#Qubic</span>
+                        <span class="text-[10px] text-gray-400 font-mono bg-white/5 px-2 py-1 rounded">#AI_Agents</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="h-16"></div>
+    </div>
+    <button
+        class="fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-black border border-neon-pink shadow-[0_0_15px_rgba(255,0,255,0.4)] hover:shadow-[0_0_25px_rgba(255,0,255,0.6)] transition-all hover:scale-105 active:scale-95 group">
+        <span class="material-symbols-outlined text-neon-pink text-2xl group-hover:animate-pulse">download</span>
+        <span
+            class="absolute right-16 rounded bg-black border border-neon-pink/30 py-1.5 px-3 text-xs font-mono text-neon-pink opacity-0 transition-opacity group-hover:opacity-100 whitespace-nowrap shadow-lg">RESUME.PDF</span>
+    </button>
+    <nav
+        class="md:hidden fixed bottom-0 z-40 w-full bg-[#050508]/95 backdrop-blur-xl border-t border-white/10 pb-safe shadow-[0_-5px_20px_rgba(0,0,0,0.5)] max-w-md mx-auto">
+        <div class="flex justify-around items-center h-20 px-4">
+            <!-- Projects -->
+            <a href="projects.html" class="flex flex-col items-center justify-center gap-1 w-14 group">
+                <div class="text-gray-500 group-hover:text-white transition-colors p-1.5">
+                    <span class="material-symbols-outlined text-[22px]">grid_view</span>
+                </div>
+                <span
+                    class="text-[8px] font-bold uppercase tracking-wider text-gray-500 group-hover:text-white font-mono transition-colors">Work</span>
+            </a>
+            <!-- Experience -->
+            <a href="experience.html" class="flex flex-col items-center justify-center gap-1 w-14 group">
+                <div
+                    class="relative bg-white/5 text-neon-pink rounded-md p-1.5 shadow-[0_0_15px_rgba(255,0,255,0.3)] border border-neon-pink/30 transition-transform group-active:scale-95">
+                    <span class="material-symbols-outlined text-[20px]">work</span>
+                    <span
+                        class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-neon-pink rounded-full shadow-[0_0_8px_rgba(255,0,255,0.8)]"></span>
+                </div>
+                <span
+                    class="text-[8px] font-bold uppercase tracking-wider text-neon-pink font-mono drop-shadow-[0_0_5px_rgba(255,0,255,0.5)]">Exp</span>
+            </a>
+            <!-- About -->
+            <a href="profile_summary.html" class="flex flex-col items-center justify-center gap-1 w-14 group">
+                <div class="text-gray-500 group-hover:text-white transition-colors p-1.5">
+                    <span class="material-symbols-outlined text-[22px]">person</span>
+                </div>
+                <span
+                    class="text-[8px] font-bold uppercase tracking-wider text-gray-500 group-hover:text-white font-mono transition-colors">About</span>
+            </a>
+            <!-- Education -->
+            <a href="education.html" class="flex flex-col items-center justify-center gap-1 w-14 group">
+                <div class="text-gray-500 group-hover:text-white transition-colors p-1.5">
+                    <span class="material-symbols-outlined text-[22px]">school</span>
+                </div>
+                <span
+                    class="text-[8px] font-bold uppercase tracking-wider text-gray-500 group-hover:text-white font-mono transition-colors">CV</span>
+            </a>
+            <!-- Contact -->
+            <a href="contact.html" class="flex flex-col items-center justify-center gap-1 w-14 group">
+                <div class="text-gray-500 group-hover:text-white transition-colors p-1.5">
+                    <span class="material-symbols-outlined text-[22px]">mail</span>
+                </div>
+                <span
+                    class="text-[8px] font-bold uppercase tracking-wider text-gray-500 group-hover:text-white font-mono transition-colors">Contact</span>
+            </a>
+        </div>
+    </nav>
+    </div>
+</body>
+
+</html>
